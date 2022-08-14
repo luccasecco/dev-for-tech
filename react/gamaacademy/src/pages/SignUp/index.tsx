@@ -1,8 +1,8 @@
 import { FormEvent, useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
 import { api } from "../../services/api";
-import { Card, Container } from "./styles";
+import { Card, Container, LoginContainer } from "./styles";
 
 interface DataProps {
   name: string;
@@ -45,6 +45,11 @@ export function SignUp() {
 
       <button type="submit">Enviar</button>
      </form>
+     
+     <LoginContainer>
+     <p>Já não tem cadastro?</p>
+     <NavLink to="/signin">Clique aqui para entrar</NavLink>
+     </LoginContainer>
 
       </Card>
     </Container>

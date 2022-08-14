@@ -20,7 +20,7 @@ export const Card = styled.div`
   align-items: center;
 
   width: 35rem;
-  height: 35rem;
+ 
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 1px 1px 0 2px #323232;
@@ -73,4 +73,19 @@ export const Card = styled.div`
     }
   }
 
+`
+
+export const LoginContainer = styled.div`
+  text-align: center;
+  margin-top: 1rem;
+
+  p {
+    margin-bottom: .5rem;
+  }
+
+  a{ 
+    text-decoration: none;
+    color: #ffff;
+    margin-top: 1em;
+  }
 `
