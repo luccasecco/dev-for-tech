@@ -39,6 +39,7 @@ export const FormContainer = styled.form`
     padding: 1rem;
     margin-bottom: .5rem;
     border-radius: 8px;
+    color: black
   }
 
   button {
@@ -55,5 +56,6 @@ export const FormContainer = styled.form`
     justify-content: center;
 
     margin: 1rem auto;
+    cursor: pointer;
   }
 `
