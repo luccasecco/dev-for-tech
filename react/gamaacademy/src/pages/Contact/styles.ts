@@ -10,7 +10,6 @@ export const Container = styled.div`
   background: #876654;
 
   h1 {
-    background: transparent;
     font-size: 5rem;
   }
 
@@ -29,6 +28,32 @@ export const Container = styled.div`
       filter: brightness(0.9)
     }
   }
+`
 
+export const FormContainer = styled.form`
+  margin-top: 1rem; 
+  display: grid;
   
+  input {
+    width: 12rem;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    border-radius: 8px;
+  }
+
+  button {
+    width: 10rem;
+    border: 0;
+    border-radius: 8px;
+    padding: .5rem;
+    background-color: #446554;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 1rem auto;
+  }
 `

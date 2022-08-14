@@ -9,12 +9,17 @@ export const Container = styled.div`
   justify-content: center;
   background: #876654;
 
-  h1 {
+  h1, p {
     background: transparent;
     font-size: 5rem;
   }
 
-  a {
+  button {
+    border: 0;
+    cursor: pointer;
+  }
+
+  a, button {
     width: 15rem;
     border-radius: 8px;
     padding: 1rem;
