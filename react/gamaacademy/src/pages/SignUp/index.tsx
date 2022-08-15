@@ -1,5 +1,6 @@
 import { FormEvent, useCallback, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Loader } from "../../components/Loader";
 import { toast } from 'react-toastify'
 import { api } from "../../services/api";
 import { Card, Container, LoginContainer } from "./styles";
@@ -12,15 +13,20 @@ interface DataProps {
 
 export function SignUp() {
   const [data, setData] = useState<DataProps>({} as DataProps)
+  const [load, setLoad] = useState(false)
   const navigate = useNavigate()
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(data)
-    toast.success('Cadastro realizado com sucesso!')
+    setLoad(true)
+    toast.success('Cadastro realizado com sucesso! Você está sendo direcionado para a página de Login')
     api.post('users', data).then(response => {console.log(response.data)
     navigate('/signin')})
     .catch(error => toast.error('Ops, algo deu errado'))
   }, [data, navigate])
+
+  if(load) {
+    return <Loader />
+  }
 
   return(
     <Container>
@@ -47,7 +53,7 @@ export function SignUp() {
      </form>
      
      <LoginContainer>
-     <p>Já não tem cadastro?</p>
+     <p>Já tem cadastro?</p>
      <NavLink to="/signin">Clique aqui para entrar</NavLink>
      </LoginContainer>
 

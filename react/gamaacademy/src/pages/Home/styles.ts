@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #876654;
+  background: #8c52e5;
 
   h1, p {
     background: transparent;
@@ -20,10 +20,11 @@ export const Container = styled.div`
   }
 
   a, button {
+    color: #ffff;
     width: 15rem;
     border-radius: 8px;
     padding: 1rem;
-    background-color: #446573;
+    background-color: #16a34a;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;

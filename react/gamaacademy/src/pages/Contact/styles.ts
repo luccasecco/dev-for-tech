@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #876654;
+  background: #8c52e5;
 
   h1 {
     font-size: 5rem;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     width: 15rem;
     border-radius: 8px;
     padding: 1rem;
-    background-color: #446573;
+    background-color: #16a34a;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;
@@ -47,7 +47,7 @@ export const FormContainer = styled.form`
     border: 0;
     border-radius: 8px;
     padding: .5rem;
-    background-color: #446554;
+    background-color: #16a34a;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;

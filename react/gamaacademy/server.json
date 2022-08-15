@@ -31,6 +31,18 @@
       "email": "userteste@teste.com",
       "password": "user123",
       "id": 6
+    },
+    {
+      "name": "teste ",
+      "email": "teste@teste.com",
+      "password": "12341234",
+      "id": 7
+    },
+    {
+      "email": "teste@email.com",
+      "password": "$2a$10$dDv2anIi7QbkeZb/3vuKP.DpuEao1rMVYt3VZzEdP1HkSQPQ69DmG",
+      "name": "User teste 2",
+      "id": 8
     }
   ]
 }

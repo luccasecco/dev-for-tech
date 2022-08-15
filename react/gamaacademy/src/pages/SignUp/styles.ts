@@ -86,6 +86,7 @@ export const LoginContainer = styled.div`
   a{ 
     text-decoration: none;
     color: #ffff;
-    margin-top: 1em;
+    margin-top: 1rem;
+    font-size: 1.2rem;
   }
 `

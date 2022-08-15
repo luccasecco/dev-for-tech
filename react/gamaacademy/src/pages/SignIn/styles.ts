@@ -34,6 +34,7 @@ export const Card = styled.div`
     display: grid;
     gap: 1rem;
     margin: 4rem auto;
+    
     input {
       box-shadow: 1px 1px 0 2px #323232;
       background: #f9f9f9;

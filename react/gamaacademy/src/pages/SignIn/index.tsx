@@ -18,9 +18,11 @@ export function SignIn() {
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoad(true)
-    toast.success('Cadastro realizado com sucesso!')
-    api.post('users', data).then(response => {console.log(response.data)
-    navigate('/signin')})
+    toast.success('Tudo certo com o seu login!')
+    api.post('session', data).then(response => {
+    const sessionToken = JSON.stringify(response.data.token)
+    localStorage.setItem('@gamaServiceToken', sessionToken)
+    navigate('/dashboard')})
     .catch(error => toast.error('Ops, algo deu errado'))
   }, [data, navigate])
 
