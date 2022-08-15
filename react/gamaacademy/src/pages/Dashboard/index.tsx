@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { Loader } from "../../components/Loader";
 import { api } from "../../services/api";
+import { useDispatch } from 'react-redux'
+import { addNewUser } from '../../store/modules/user/action'
+
 import { Container } from "./styles";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 interface ICollaborator {
   id: number;
@@ -18,6 +23,8 @@ export function Dashboard() {
   const [isLoad, setIsLoad] = useState(false)
   const token = localStorage.getItem('@gamaServiceToken')
 
+  const dispath = useDispatch()
+
   useEffect(() => {
     api.get('users'
       // headers: {
@@ -27,13 +34,19 @@ export function Dashboard() {
       setIsLoad(true)
       setData(response.data)
     }).finally(() => setIsLoad(false))
-  }, [token, isLoad])
+  }, [token])
+
+  useEffect(() => {
+    data?.map(user => dispath((addNewUser(user))))
+  }, [data, dispath])
 
   if(isLoad) {
     return <Loader />
   }
 
   return (
+    <>
+    <Header />
     <Container>
       <h1>Dashboard</h1>
       <> 
@@ -50,5 +63,8 @@ export function Dashboard() {
         ))}
       </>
     </Container>
+    <Footer />
+
+    </>
   )
 }

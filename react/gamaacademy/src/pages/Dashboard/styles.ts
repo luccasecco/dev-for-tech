@@ -4,15 +4,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 5rem auto;
  
   width: 100%;
-  background-color: #a7f3d0;
+  /* background-color: #a7f3d0; */
 
   .card {
     width: 30rem;
     
-    box-shadow: 1px 1px 3px #ccc;
-    background: #ffff;
+    box-shadow: 1px 1px 3px black;
+    background: #a7f3d0;
     border-radius: 8px;
     padding: 1rem;
     margin-top: 2rem;

@@ -4,6 +4,8 @@ import { Loader } from "../../components/Loader";
 import { toast } from 'react-toastify'
 import { api } from "../../services/api";
 import { Card, Container, LoginContainer } from "./styles";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 
 interface DataProps {
   name: string;
@@ -29,6 +31,8 @@ export function SignUp() {
   }
 
   return(
+    <>
+    <Header />
     <Container>
       <Card>
       <h1>Faça a sua inscrição</h1>
@@ -59,5 +63,7 @@ export function SignUp() {
 
       </Card>
     </Container>
+    <Footer />
+    </>
   )
 }

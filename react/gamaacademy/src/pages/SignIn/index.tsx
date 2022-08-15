@@ -2,6 +2,8 @@ import { FormEvent, useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 import { Loader } from "../../components/Loader";
 import { api } from "../../services/api";
 import { Card, Container, RegistrationContainer } from "./styles";
@@ -32,6 +34,8 @@ export function SignIn() {
 
 
   return(
+    <>
+    <Header />
     <Container>
       <Card>
       <h1>Login</h1>
@@ -59,5 +63,7 @@ export function SignIn() {
 
       </Card>
     </Container>
+    <Footer />
+    </>
   )
 }
