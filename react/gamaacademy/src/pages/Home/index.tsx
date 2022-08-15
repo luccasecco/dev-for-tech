@@ -1,28 +1,17 @@
 import { Container } from "./styles";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 export function Home() {
-  const [isLoad, setIsLoad] = useState(true)
+
 
   return (
-    <Container>
-      { isLoad ? (
-        <>
-        <p>Bem vindo</p>
-        <button onClick={() => setIsLoad(!isLoad)}> Entrar </button>
-        </>
-      ) : (
-        <>
+    <>
+      <Header />
+        <Container>
           <h1>Home</h1>
-             <NavLink to="/contact">
-               Acessar página de contato
-             </NavLink>
-        </>
-      )}
-
-      
-     
-    </Container>
+        </Container>
+      <Footer />
+    </>
   )
 }
