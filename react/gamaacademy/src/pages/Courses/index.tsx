@@ -8,12 +8,11 @@ export function Courses() {
 
   return (
     <>
-    <Header />
-    <Container>
-      <h1>Cursos</h1>
-      
-    </Container>
-    <Footer />
+      <Header />
+      <Container>
+        <h1>Cursos</h1>  
+      </Container>
+      <Footer />
     </>
   )
 }
