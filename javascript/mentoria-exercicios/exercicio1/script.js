@@ -2,10 +2,6 @@ function averageOfNumber() {
   let quantityNumbers = parseInt(prompt('Quantidade de números: '))
   let vectorNumbers = new Array(quantityNumbers)
 
-  if (isNaN(quantityNumbers)) {
-    return 'Valor inválido, por favor digite um número inteiro'
-  }
-
   for (let i = 0; i < quantityNumbers; i++)
     vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
 
