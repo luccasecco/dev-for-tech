@@ -14,8 +14,10 @@ function calculator(number1, number2, operation) {
       result = number1 / number2
       break
     default:
-      result
+      break
   }
+
+  return result
 }
 
 console.log(calculator(10, 5, '+')) // 15
