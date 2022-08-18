@@ -1,17 +1,20 @@
 function calculator(number1, number2, operation) {
+  let result = 0
   switch (operation) {
     case '+':
-      console.log(number1 + number2)
+      result = number1 + number2
       break
     case '*':
-      console.log(number1 * number2)
+      result = number1 * number2
       break
     case '-':
-      console.log(number1 - number2)
+      result = number1 - number2
       break
     case '/':
-      console.log(number1 / number2)
+      result = number1 / number2
       break
+    default:
+      result
   }
 }
 
