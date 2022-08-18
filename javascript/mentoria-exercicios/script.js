@@ -1,16 +1,16 @@
 function averageOfNumber() {
-  let numeros = parseInt(prompt('Numero: '))
-  let vetor = new Array(numeros)
+  let quantityNumbers = parseInt(prompt('Quantidade de números: '))
+  let vectorNumbers = new Array(quantityNumbers)
 
-  for (let i = 0; i < numeros; i++)
-    vetor[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
+  for (let i = 0; i < quantityNumbers; i++)
+    vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
 
-  let soma = vetor.reduce((t, n) => t + n, 0)
-  let media = soma / numeros
+  let sum = vectorNumbers.reduce((t, n) => t + n, 0)
+  let average = sum / quantityNumbers
 
   document.querySelector('#result').innerHTML = `
-        <h2>Nº de números: ${numeros}</h2>
-        <h2>Média dos números: ${media.toFixed(2)}</h2>
+        <h2>Nº de números: ${quantityNumbers}</h2>
+        <h2>Média dos números: ${average.toFixed(2)}</h2>
    `
 }
 
