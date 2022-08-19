@@ -1,3 +1,10 @@
+function getEntries() {
+  let num1 = Number(prompt('Digite o primeiro valor: ', ''))
+  let operator = promp('+, -, *, /', '')
+  let num2 = Number(prompt('Digite o segundo valor: ', ''))
+  calculator(num1, num2, operator)
+}
+
 function calculator(number1, number2, operation) {
   let result = 0
   switch (operation) {
@@ -19,5 +26,7 @@ function calculator(number1, number2, operation) {
 
   return result
 }
+
+getEntries()
 
 console.log(calculator(10, 5, '+')) // 15

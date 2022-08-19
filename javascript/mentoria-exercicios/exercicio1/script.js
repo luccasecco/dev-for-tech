@@ -1,15 +1,20 @@
 function averageOfNumber() {
   let quantityNumbers = parseInt(prompt('Quantidade de números: '))
-  let vectorNumbers = new Array(quantityNumbers)
+  let vectorNumbers = [quantityNumbers]
 
-  for (let i = 0; i < quantityNumbers; i++)
-    vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
+  if (isNaN(quantityNumbers)) {
+    alert('Valor inválido')
+  } else {
+    for (let i = 0; i < quantityNumbers; i++)
+      vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
 
-  let sum = vectorNumbers.reduce((t, n) => t + n, 0)
-  let average = sum / quantityNumbers
+    let sum = vectorNumbers.reduce((t, n) => t + n, 0)
+    let average = sum / quantityNumbers
 
-  document.querySelector('#result').innerHTML = `
-        <h2>Nº de números: ${quantityNumbers}</h2>
-        <h2>Média dos números: ${average.toFixed(2)}</h2>
-   `
+    document.querySelector('#result').innerHTML = `
+          <h2>Quantidade de números: ${quantityNumbers}</h2>
+          <br />
+          <h2>Média dos números: ${average.toFixed(2)}</h2>
+     `
+  }
 }
