@@ -8,4 +8,12 @@ function triangle() {
     }
     console.log(result)
   }
+
+  for (let i = number; i > 0; i--) {
+    let result = ''
+    for (let j = 0; j < i; j++) {
+      result += '*'
+    }
+    console.log(result + '\n')
+  }
 }
