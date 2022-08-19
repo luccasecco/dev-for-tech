@@ -32,3 +32,16 @@ button {
 button:hover {
   background-color: #16a34a;
 }
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20rem;
+  height: 12rem;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #d1fae5;
+  background-color: #7c3aed;
+  box-shadow: 1px 1px 2px #dcfce7;
+}
