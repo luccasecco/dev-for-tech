@@ -47,6 +47,6 @@ function calculator() {
   <br />
   <p>Segundo valor: <strong>${number2}</strong></p>
   <br />
-  <h1>Resultado: ${result.toFixed(2)}</h1>
+  <h3>Resultado: ${result.toFixed(2)}</h3>
 `
 }
