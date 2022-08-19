@@ -1,8 +1,19 @@
 function getEntries() {
-  let num1 = Number(prompt('Digite o primeiro valor: ', ''))
-  let operator = promp('+, -, *, /', '')
-  let num2 = Number(prompt('Digite o segundo valor: ', ''))
-  calculator(num1, num2, operator)
+  let num1 = Number(prompt('Digite o primeiro valor: '))
+  let num2 = Number(prompt('Digite o segundo valor: '))
+  let operator = prompt('Qual a operação que você deseja realizar?')
+
+  while (
+    operator != '+' &&
+    operator != '-' &&
+    operator != '*' &&
+    operator != '/'
+  ) {
+    alert('Por favor escolha um operador válido: +, -, * ou /')
+    operator = prompt('+, -, *, /', '')
+  }
+
+  console.log(calculator(num1, num2, operator))
 }
 
 function calculator(number1, number2, operation) {
@@ -28,5 +39,3 @@ function calculator(number1, number2, operation) {
 }
 
 getEntries()
-
-console.log(calculator(10, 5, '+')) // 15
