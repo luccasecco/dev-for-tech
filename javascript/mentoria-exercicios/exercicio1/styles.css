@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #1f2937;
+  background-color: #1f2937;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -21,9 +21,14 @@ button {
   border-radius: 10px;
   border: 0;
   padding: 1rem;
-  background: #7e22ce;
-  color: #c4b5fd;
+  background-color: #166534;
+  color: #ffff;
   font-size: 1rem;
 
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #16a34a;
 }

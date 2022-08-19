@@ -7,8 +7,14 @@ function averageOfNumber() {
     quantityNumbers = parseInt(prompt('Quantidade de números: '))
   }
 
-  for (let i = 0; i < quantityNumbers; i++)
+  for (let i = 0; i < quantityNumbers; i++) {
     vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
+
+    while (isNaN(vectorNumbers[i])) {
+      alert('Por favor digite um número')
+      vectorNumbers[i] = parseFloat(prompt('Número ' + (i + 1) + ':'))
+    }
+  }
 
   let sum = vectorNumbers.reduce((t, n) => t + n, 0)
   let average = sum / quantityNumbers
