@@ -14,8 +14,6 @@ function isNumberEvenOrOdd() {
   }
 
   document.querySelector('#result').innerHTML = `
-  <p>Número: <strong>${number}</strong></p>
-  <br />
-  <h3>Resultado: ${result}</h3>
+  <h3>${result}</h3>
 `
 }
