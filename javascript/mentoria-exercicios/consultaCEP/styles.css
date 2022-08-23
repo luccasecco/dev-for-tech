@@ -63,6 +63,7 @@ input[type='text']::placeholder {
 }
 
 label {
+  font-size: 0rem;
   visibility: hidden;
 }
 
@@ -115,7 +116,7 @@ thead {
   font-size: 1.5rem;
 }
 
-tbody {
+.table-body-styles {
   background: #cbd5e1;
   font-size: 1.2rem;
   height: 2.5rem;
