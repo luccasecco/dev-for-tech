@@ -1,28 +1,17 @@
 const button = document.getElementById('send')
+const cep = document.querySelector('#cepNumber')
+const street = document.querySelector('#street')
+const district = document.querySelector('#district')
+const local = document.querySelector('#local')
 
 const setTable = data => {
-  const box1 = document.createElement('span')
-  const box2 = document.createElement('span')
-  const box3 = document.createElement('span')
-  const box4 = document.createElement('span')
-
-  const cep = document.createTextNode(data.cep)
-  const street = document.createTextNode(data.logradouro)
-  const district = document.createTextNode(data.bairro)
-  const local = document.createTextNode(data.localidade)
-
-  box1.appendChild(cep)
-  box2.appendChild(street)
-  box3.appendChild(district)
-  box4.appendChild(local)
-
-  document.getElementById('results').appendChild(box1)
-  document.getElementById('results').appendChild(box2)
-  document.getElementById('results').appendChild(box3)
-  document.getElementById('results').appendChild(box4)
+  cep.innerText = data.cep
+  street.innerText = data.logradouro
+  district.innerText = data.bairro
+  local.innerText = data.localidade
 }
 
-const searchCep = async () => {
+const getCep = async () => {
   const cep = document.getElementById('cep').value
   const url = `https://viacep.com.br/ws/${cep}/json/`
 
@@ -32,4 +21,4 @@ const searchCep = async () => {
   setTable(data)
 }
 
-button.addEventListener('click', searchCep)
+button.addEventListener('click', getCep)
