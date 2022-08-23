@@ -27,6 +27,18 @@ header {
   margin: 0 auto;
 }
 
+.logo {
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-map-marker {
+  font-size: 3rem;
+  color: #facc15;
+}
+
 h1 {
   color: #cbd5e1;
 }
@@ -55,13 +67,14 @@ label {
 }
 
 #send {
-  width: 8rem;
+  width: 4rem;
   padding: 0.5rem;
   border: 0;
   border-radius: 8px;
   color: #fff;
   background-color: #4f46e5;
   cursor: pointer;
+  font-size: 1rem;
 
   transition: background-color 0.2s ease-in-out;
 }
@@ -93,6 +106,7 @@ label {
 .table {
   width: 100%;
   text-align: center;
+  box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.5);
 }
 
 thead {
@@ -108,13 +122,16 @@ tbody {
 }
 
 #button-clear {
-  width: 8rem;
+  width: 2.5rem;
   padding: 0.5rem;
   border: 0;
   border-radius: 8px;
   color: #fff;
   background-color: #991b1b;
   cursor: pointer;
+  font-size: 1.2rem;
+
+  box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.5);
 
   transition: background-color 0.2s ease-in-out;
 }
@@ -124,7 +141,7 @@ tbody {
 }
 
 #results {
-  width: 80rem;
+  width: 78rem;
   margin: 5rem auto;
   padding: 0 2%;
 

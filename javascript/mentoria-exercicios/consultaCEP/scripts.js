@@ -14,11 +14,12 @@ const setTable = arrDataBase => {
   buttonClear.classList.remove('hide')
   emptyText.style.display = 'none'
   table.classList.remove('hide')
+
   arrDataBase.map(item => {
     cep.innerText = item.cep
     street.innerText = item.logradouro
     district.innerText = item.bairro
-    local.innerText = item.localidade
+    local.innerText = item.localidade + '/' + item.uf
   })
 }
 
@@ -30,10 +31,10 @@ const getCep = async () => {
   const data = await api.json()
 
   arrDataBase.push(data)
+  localStorage.setItem('@consulta_CEP: ', JSON.stringify(arrDataBase))
 
-  localStorage.setItem('@consulta_CEP: ', JSON.stringify(data))
-  const getLocalStorage = localStorage.getItem('@consulta_CEP: ')
-  const dataBase = JSON.parse(getLocalStorage)
+  // const getLocalStorage = localStorage.getItem('@consulta_CEP: ')
+  // const dataBase = JSON.parse(getLocalStorage)
 
   setTable(arrDataBase)
 }
