@@ -36,6 +36,7 @@ const removeItems = () => {
     arrDataBase = []
     card.classList.add('hide')
     emptyText.style.display = 'block'
+    localStorage.removeItem('consultaCep')
   }
 }
 
@@ -60,7 +61,7 @@ function setCard() {
 }
 
 function formatStr(str) {
-  return str.replace('-', '').trim()
+  return str.replace(/[^0-9]/g, '').trim()
 }
 
 const initializeArr = consultaCep => {
