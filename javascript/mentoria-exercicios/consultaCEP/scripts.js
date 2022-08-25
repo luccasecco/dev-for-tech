@@ -1,57 +1,89 @@
-const cep = document.getElementById('cep')
+const endpoint = 'https://viacep.com.br/ws/value/json/'
+
+const cepInput = document.getElementById('cep')
 const button = document.getElementById('send')
-const table = document.querySelector('#card-body')
+const card = document.querySelector('#card-body')
 const box = document.querySelector('#results')
 const emptyText = document.querySelector('#empty-text')
 const buttonClear = document.querySelector('#btn-clear')
 
-let arrDataBase = JSON.parse(localStorage.getItem('dataBase')) ?? []
+let arrDataBase = JSON.parse(localStorage.getItem('consultaCep'))
+
+if (!!arrDataBase && arrDataBase.length > 0) {
+  arrDataBase.map(consultaCep => render(consultaCep))
+}
+
+function render(consultaCep) {
+  if (!arrDataBase) {
+    initializeArr(consultaCep)
+  }
+
+  if (!!arrDataBase && arrDataBase.indexOf(consultaCep) === -1) {
+    arrDataBase.push(consultaCep)
+  }
+
+  localStorage.setItem('consultaCep', JSON.stringify(arrDataBase))
+
+  emptyText.style.display = 'none'
+  card.classList.remove('hide')
+
+  setCard(consultaCep)
+}
 
 const removeItems = () => {
   if (arrDataBase.length > 0) {
+    listaEnderecos = JSON.parse(localStorage.getItem('enderecos'))
     arrDataBase = []
-    localStorage.removeItem('dataBase')
-    // buttonClear.classList.add('hide')
-    table.classList.add('hide')
+    card.classList.add('hide')
     emptyText.style.display = 'block'
   }
-  // localStorage.removeItem(arrDataBase)
 }
 
-const setTable = () => {
-  arrDataBase = JSON.parse(localStorage.getItem('dataBase'))
-
-  // const item = document.querySelector('#table-body')
+function setCard() {
+  arrDataBase = JSON.parse(localStorage.getItem('consultaCep'))
 
   if (arrDataBase) {
-    // buttonClear.classList.remove('hide')
     emptyText.style.display = 'none'
-    table.classList.remove('hide')
+    card.classList.remove('hide')
 
     arrDataBase.map(data => {
-      table.innerHTML = `
+      card.innerHTML = `
           <button id="btn-clear" onClick=removeItems()><i class="icon-trash"></i></button>
           <p>CEP</p> <span>${data.cep}</span><hr />
           <p>ENDEREÇO</p> <span>${data.logradouro}</span><hr />
           <p>BAIRRO</p> <span>${data.bairro}</span><hr />
           <p>CIDADE</p> <span>${data.localidade}</span><hr />
           <p>ESTADO</p> <span>${data.uf}</span><hr />
-       
         `
     })
   }
 }
 
-const getCep = async () => {
-  let cepInput = cep.value.replace('-', '')
-  const url = `https://viacep.com.br/ws/${cepInput}/json/`
-
-  await fetch(url)
-    .then(response => response.json())
-    .then(data => arrDataBase.push(data))
-
-  localStorage.setItem('dataBase', JSON.stringify(arrDataBase))
-  setTable(arrDataBase)
+function formatStr(str) {
+  return str.replace('-', '').trim()
 }
 
-button.addEventListener('click', getCep)
+const initializeArr = consultaCep => {
+  arrDataBase = []
+  arrDataBase.push(consultaCep)
+}
+
+const getCep = async cep => {
+  const res = await fetch(endpoint.replace('value', formatStr(cep)))
+  const body = await res.json()
+
+  body.hasOwnProperty('erro') ? alert('Endereço não existe') : render(body)
+}
+
+button.addEventListener('click', e => {
+  e.preventDefault()
+
+  !!arrDataBase &&
+  !!arrDataBase.length &&
+  !!arrDataBase.find(e => formatStr(e.cep) === formatStr(cepInput.value))
+    ? alert(`CEP ${cepInput.value} já consultado.`)
+    : getCep(cepInput.value)
+
+  cepInput.value = null
+  cepInput.focus()
+})
