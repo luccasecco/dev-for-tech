@@ -6,5 +6,5 @@ export const Container = styled.div`
   padding: 0 2%;
   align-items: center;
   justify-content: center;
-  margin: 10rem auto;
+  margin: 10rem auto 25rem;
 `

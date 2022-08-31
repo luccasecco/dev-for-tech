@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 2rem;
 
   .card {
     width: 20rem;
@@ -17,6 +17,7 @@ export const Container = styled.div`
     border-bottom-left-radius: 30px;
 
     background-color: ${props => props.theme["gray-300"]};
+    box-shadow: 2px 2px 2px 1px ${props => props.theme["gray-900"]};
 
     button { 
       border: 0;

@@ -2,6 +2,7 @@ import { ArchiveBox, MagnifyingGlass } from "phosphor-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Card } from "../../components/Card";
 import { EmptyPage } from "../../components/EmptyPage";
 import { Map } from "../../components/Map";
@@ -14,10 +15,14 @@ export function Home() {
 
   function checkCep(e) {
     const cep = e.target.value.replace(/\D/g, '')
+      if(e.target.value === '' || cep.length < 8) {
+        return toast.error("Por favor, digite um CEP válido para pesquisa")
+      }
+      
     fetch(`https://cep.awesomeapi.com.br/json/${cep}`)
     .then(response => response.json())
     .then(data => setCepValue(data))
-    .catch(error => console.error(error))
+    .catch(error => {return toast.error(error)})
     e.target.value = ''
   }
 

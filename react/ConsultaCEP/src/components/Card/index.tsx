@@ -1,6 +1,7 @@
 import { ArchiveBox, GlobeStand, TrashSimple } from "phosphor-react";
 import { api } from "../../lib/axios";
 import { Container } from "./styles";
+import { toast } from 'react-toastify' 
 
 interface CardProps {
   data: {
@@ -17,6 +18,7 @@ export function Card({data, onClearPage}: CardProps) {
 
   function handleSaveCard() {
     api.post('/cards', data)
+    toast.success('Card salvo com sucesso!')
   }
 
   function handleDeleteCard() { 

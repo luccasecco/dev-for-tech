@@ -10,6 +10,8 @@ export const Container = styled.div`
   font-weight: bold;
   background-color: ${props => props.theme["gray-300"]};
 
+  box-shadow: 2px 2px 2px 1px ${props => props.theme["gray-900"]};
+
   header {
     display: flex;
     align-items: center;
