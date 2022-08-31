@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+`
+
+export const Content = styled.div`
   max-width: 55rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
+  margin: 10rem auto;
  
 
   .card-wrapper {
@@ -16,16 +23,19 @@ export const Container = styled.div`
   }
 `
 
+
+
 export const SearchBox = styled.div`
   
-    margin: -5rem auto 2rem;
-    width: 20rem;
+    margin: -5rem;
+    width: 100%;
     display: flex;
     gap: .5rem;
+    padding: 0 2%;
     align-items: center;
+    justify-content: center;
     
     label {
-      width: 60rem;
       display: flex;
       gap: 0.5rem;
 
