@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Card } from "../../components/Card";
 import { EmptyPage } from "../../components/EmptyPage";
-import { Header } from "../../components/Header";
 import { Map } from "../../components/Map";
 import { Container, Content, SearchBox } from "./styles";
 
@@ -12,14 +11,18 @@ export function Home() {
   const [cepValue, setCepValue] = useState('')
 
 
-  const checkCep = (e) => {
+  function checkCep(e) {
     const cep = e.target.value.replace(/\D/g, '')
     fetch(`https://cep.awesomeapi.com.br/json/${cep}`)
     .then(response => response.json())
     .then(data => setCepValue(data))
     .catch(error => console.error(error))
+    e.target.value = ''
   }
- 
+
+  function clearPage() {
+    setCepValue('')
+  }
 
   return(
     <Container>
@@ -43,7 +46,7 @@ export function Home() {
         
         <Content>
             <div className="card-wrapper">
-              <Card data={cepValue}/>
+              <Card data={cepValue} onClearPage={clearPage}/>
             </div>
 
             <Map data={cepValue}/>

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 22rem;
-  border-radius: 8px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   padding: 1rem;
   color: ${props => props.theme["green-700"]};
   font-size: 1.25rem;

@@ -9,6 +9,11 @@ export const Container = styled.div`
   margin-bottom: 4rem;
   background-color: ${props => props.theme["gray-900"]};
 
+  a{
+    text-decoration: none;
+    color: ${props => props.theme["gray-100"]};
+  }
+
   strong {
     color: ${props => props.theme["green-300"]}
   }

@@ -10,16 +10,17 @@ interface CardProps {
     city: string;
     state: string;
   }
+  onClearPage: () => void
 }
 
-export function Card({data}: CardProps) {
+export function Card({data, onClearPage}: CardProps) {
 
   function handleSaveCard() {
     api.post('/cards', data)
   }
 
   function handleDeleteCard() { 
-    api.delete(`/cards/1`)
+    onClearPage()
   }
 
   return (
