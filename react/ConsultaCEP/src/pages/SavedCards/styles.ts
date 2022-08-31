@@ -51,7 +51,13 @@ export const Container = styled.div`
         color: ${props => props.theme["green-700"]};  
         border-radius: 8px;
         padding: 0.5rem;
+
+        &:last-child{
+          margin-bottom: 1rem;
+        }
       }
+
+      
       
     }
 

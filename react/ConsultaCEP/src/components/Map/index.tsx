@@ -28,7 +28,7 @@ export function Map({data}: CardProps) {
     <MapContainer
                 center={center} 
                 zoom={10} 
-                style={ {width:'100%' , height:'58vh'} }
+                style={ {width:'100%' , height:'50vh'} }
               >
       
               <TileLayer
