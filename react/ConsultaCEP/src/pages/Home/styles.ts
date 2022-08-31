@@ -13,16 +13,47 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 10rem auto;
- 
+  margin: 7rem auto 2rem;
+
 
   .card-wrapper {
     display: flex;
     width: 100%;
     gap: .5rem;
   }
+
+
 `
 
+export const ArchivedCards = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin: 0 auto;
+    color: ${props => props.theme["gray-100"]};
+
+    svg {
+      color: ${props => props.theme["green-500"]}
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      text-decoration: none;
+      color: ${props => props.theme["gray-100"]};
+      
+      &:hover {
+        svg {
+          color: ${props => props.theme["green-300"]};
+          transition: color 0.2s
+        }
+      }
+    }
+  
+`
 
 
 export const SearchBox = styled.div`
