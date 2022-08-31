@@ -3,6 +3,9 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 interface CardProps {
   data: {
+    cep: string;
+    address: string;
+    city: string;
     lat: number;
     lng: number;
   }
@@ -38,7 +41,11 @@ export function Map({data}: CardProps) {
          
               <Marker position={center}>
                 <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  {data.cep} 
+                  <br /> 
+                  {data.address}
+                  <br />
+                  {data.city}
                 </Popup>
               </Marker>
              
