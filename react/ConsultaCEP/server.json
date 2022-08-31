@@ -1,19 +1,18 @@
 {
-  "posts": [
+  "cards": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "cep": "88066408",
+      "address_type": "Rua",
+      "address_name": "5",
+      "address": "Rua 5",
+      "state": "SC",
+      "district": "Armação do Pântano do Sul",
+      "lat": "-27.76448",
+      "lng": "-48.51024",
+      "city": "Florianópolis",
+      "city_ibge": "4205407",
+      "ddd": "48",
+      "id": 2
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

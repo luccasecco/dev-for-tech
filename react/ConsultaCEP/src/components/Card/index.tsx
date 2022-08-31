@@ -1,4 +1,5 @@
 import { ArchiveBox, GlobeStand, TrashSimple } from "phosphor-react";
+import { api } from "../../lib/axios";
 import { Container } from "./styles";
 
 interface CardProps {
@@ -13,15 +14,21 @@ interface CardProps {
 
 export function Card({data}: CardProps) {
 
+  function handleSaveCard() {
+    api.post('/cards', data)
+  }
+
+  function handleDeleteCard() { 
+    api.delete(`/cards/1`)
+  }
+
   return (
     <Container>
       <header>
       <GlobeStand size={40}/>
       <div className="button-wrapper">
-      <button><ArchiveBox size={25} color="green"/></button>
-      <button type="button">
-        <TrashSimple size={25}/>
-      </button>
+      <button onClick={handleSaveCard}><ArchiveBox size={25} color="green"/></button>
+      <button onClick={handleDeleteCard}><TrashSimple size={25}/></button>
       </div>
       </header>
        <div className="content">

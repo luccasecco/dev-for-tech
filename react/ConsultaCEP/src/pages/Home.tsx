@@ -41,7 +41,7 @@ export function Home() {
 
       
 
-          <Map />
+          <Map data={cepValue}/>
       </Container>
     </>
   )

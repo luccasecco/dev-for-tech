@@ -1,25 +1,34 @@
 import { LatLngExpression } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useGeoLocation } from "../../hooks/useGeoLocation";
 
-export function Map() {
-  const { coords } = useGeoLocation()
+interface CardProps {
+  data: {
+    lat: number;
+    lng: number;
+  }
+}
 
-  if(!coords){
+export function Map({data}: CardProps) {
+  
+  const lat = data.lat
+  const lng = data.lng
+
+
+  if(!data){
     return <h1>Obtendo localização</h1>
   }
 
-  const position = {
-    lat: coords[0],
-    lng: coords[1]
+  const center = {
+    lat: lat,
+    lng: lng
   } as LatLngExpression
+
 
   return (
     <MapContainer
-                center={position} 
-                zoom={13} 
+                center={center} 
+                zoom={10} 
                 style={ {width:'100%' , height:'58vh'} }
-               
               >
       
               <TileLayer
@@ -27,7 +36,7 @@ export function Map() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
          
-              <Marker position={position}>
+              <Marker position={center}>
                 <Popup>
                   A pretty CSS3 popup. <br /> Easily customizable.
                 </Popup>
