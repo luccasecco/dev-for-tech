@@ -57,14 +57,14 @@ export const ArchivedCards = styled.div`
 
 
 export const SearchBox = styled.div`
-  
-    margin: -5rem;
+    margin-top: -5.5rem;
     width: 100%;
     display: flex;
     gap: .5rem;
     padding: 0 2%;
     align-items: center;
     justify-content: center;
+  
     
     label {
       display: flex;
