@@ -31,7 +31,7 @@ export const ArchivedCards = styled.div`
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    margin: 0 auto;
+    margin: 0 auto 5rem;
     color: ${props => props.theme["gray-100"]};
 
     svg {
