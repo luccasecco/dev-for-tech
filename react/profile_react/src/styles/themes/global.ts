@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme['background-900']}
   }
   body, input, textarea, button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1rem;
   }

@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { DefaultLayout } from "./layouts/DefaultLayout";
+import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
-import { SocialMedia } from "./pages/SocialMedia";
+import { Technologies } from "./pages/Technologies";
 
 export function Router() {
   return (
@@ -10,8 +11,8 @@ export function Router() {
       <Route path="/" element={<DefaultLayout />}>
         <Route index element={<Home />} />
         <Route path="/projetos" element={<Projects />} />
-        <Route path="/midias" element={<SocialMedia />} />
-        <Route path="/contato" element={<SocialMedia />} />
+        <Route path="/midias" element={<Technologies />} />
+        <Route path="/contato" element={<Contact />} />
       </Route>
 
     </Routes>

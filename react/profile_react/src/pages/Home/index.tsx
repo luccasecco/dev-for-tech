@@ -1,4 +1,4 @@
-import { Database, GithubLogo, TelegramLogo } from "phosphor-react";
+import { ComputerTower, Database, GithubLogo, LinkedinLogo, TelegramLogo } from "phosphor-react";
 import { NavLink } from "react-router-dom";
 import useSWR from "swr";
 import { api } from "../../services/api";
@@ -38,17 +38,24 @@ export function Home() {
     <Container>
       <img src={user?.avatar_url} alt="" />
       <h1>{user?.name}</h1>
+      <span>{user?.location}</span>
+
       <p>{user?.bio}</p>
-      <div className="followers">
-        <p>{user?.location}</p>
-        <span>Seguidores: {user?.followers}</span>
-        <span>Seguindo: {user?.following}</span>
-      </div>
 
       <div className="buttons">
         <NavLink to="/projetos"><button><Database size={18} />Projetos</button></NavLink>
-        <NavLink to="/midias"><button><GithubLogo size={18} />Redes Sociais</button></NavLink>
+        <NavLink to="/midias"><button><ComputerTower size={18} />Tecnologias</button></NavLink>
         <NavLink to="/contato"><button><TelegramLogo size={18} />Contato</button></NavLink>
+      </div>
+
+      <div className="media-container">
+        <a target="_blank" href="https://www.github.com/luccasecco">
+          <GithubLogo size={50} />
+        </a>
+
+        <a target="_blank" href="https://www.linkedin.com/in/luccaseccodev/">
+          <LinkedinLogo size={50} />
+        </a>
       </div>
 
     </Container>
