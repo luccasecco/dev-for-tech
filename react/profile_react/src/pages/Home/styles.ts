@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 75rem;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -14,6 +13,8 @@ export const Container = styled.div`
   img {
     border-radius: 50%;
     height: 10rem;
+
+    border: 2px solid ${props => props.theme["yellow-500"]};
   }
 
   h1 {
@@ -36,9 +37,15 @@ export const Container = styled.div`
   .buttons {
     display: flex;
     align-items: center;
-    gap: .875rem;
+    gap: 2rem;
+
+    a {
+        text-decoration: none;
+      }
 
     button {
+      display: flex;
+      align-items: center;
       border-radius: 8px;
       padding: 1rem;
       border: 0;
@@ -51,7 +58,12 @@ export const Container = styled.div`
         background-color: ${props => props.theme["yellow-100"]};
         transition: background-color 0.2s
       }
-  }
+
+      svg {
+        margin-right: .5rem;
+      }
+
+    }
   }
 
 `

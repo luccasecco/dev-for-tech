@@ -2,6 +2,6 @@ import { Container } from "./styles";
 
 export function Footer() {
   return (
-    <Container></Container>
+    <Container> Feito por Lucca Secco</Container>
   )
 }

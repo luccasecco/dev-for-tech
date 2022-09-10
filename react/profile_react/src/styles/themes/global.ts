@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-500']}
   }
   body {
+    height: 100%;
     background: ${(props) => props.theme['background-900']}
   }
   body, input, textarea, button {

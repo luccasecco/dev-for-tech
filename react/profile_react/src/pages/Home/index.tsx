@@ -1,3 +1,5 @@
+import { Database, GithubLogo, TelegramLogo } from "phosphor-react";
+import { NavLink } from "react-router-dom";
 import useSWR from "swr";
 import { api } from "../../services/api";
 
@@ -44,9 +46,9 @@ export function Home() {
       </div>
 
       <div className="buttons">
-        <button>Projetos</button>
-        <button>Redes Sociais</button>
-        <button>Contato</button>
+        <NavLink to="/projetos"><button><Database size={18} />Projetos</button></NavLink>
+        <NavLink to="/midias"><button><GithubLogo size={18} />Redes Sociais</button></NavLink>
+        <NavLink to="/contato"><button><TelegramLogo size={18} />Contato</button></NavLink>
       </div>
 
     </Container>

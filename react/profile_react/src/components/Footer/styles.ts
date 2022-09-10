@@ -6,6 +6,11 @@ export const Container = styled.footer`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: ${props => props.theme["background-700"]}
+  justify-content: center;
+  background: ${props => props.theme["background-700"]};
+  color: ${props => props.theme["gray-100"]};
+  font-size: .875rem;
+  margin: auto;
+  bottom: 0;
+  position: fixed;
 `
