@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
     
@@ -19,6 +19,8 @@ export const Container = styled.div`
     a {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-right: 0;
       color: ${props => props.theme['gray-100']}
     }
@@ -33,7 +35,7 @@ export const Container = styled.div`
 
   li {
     list-style: none;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
     background-color: ${props => props.theme['gray-300']};
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);

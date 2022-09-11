@@ -19,6 +19,8 @@ export const Container = styled.div`
     .back-to-home{
       a {
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         margin-right: 0;
         color: ${props => props.theme['gray-100']}

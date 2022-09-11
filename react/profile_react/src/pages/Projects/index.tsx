@@ -1,6 +1,7 @@
 import { ArrowArcLeft } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Loading } from "../../components/Loader";
 import { api } from "../../services/api";
 
 import { Container } from "./styles";
@@ -28,14 +29,14 @@ export function Projects() {
         </div>
       </div>
       <ul>
-        {repositories.map(repo => {
+        {repositories.length ? repositories.map(repo => {
           return (
             <li key={repo.full_name}>
               <a target="_blank" href={repo.html_url}>{repo.full_name}</a>
-              <p>{repo.description}</p>
+              <p>{repo.description ? repo.description : "Projeto sem descrição"}</p>
             </li>
           )
-        })}
+        }) : <Loading />}
       </ul>
 
     </Container>

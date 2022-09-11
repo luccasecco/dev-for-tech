@@ -1,12 +1,14 @@
 import { ArrowArcLeft } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Container, FormContent } from "./styles";
 
 export function Contact() {
   const { register, formState: { isSubmitting }, handleSubmit, reset } = useForm()
 
   function onHandleSubmit(data: any) {
+    toast.success("Mensagem enviada com sucesso!")
     console.log(data)
     reset()
   }
@@ -20,18 +22,18 @@ export function Contact() {
       </div>
       <FormContent onSubmit={handleSubmit(onHandleSubmit)}>
         <input
-          id="name"
+          id="user_name"
           type="text"
           placeholder="Digite seu nome"
           required
-          {...register("name")}
+          {...register("user_name")}
         />
         <input
-          id="email"
+          id="user_email"
           type="email"
           placeholder="Digite seu e-mail"
           required
-          {...register("email")}
+          {...register("user_email")}
 
         />
         <textarea
