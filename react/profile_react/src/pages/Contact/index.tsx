@@ -1,4 +1,6 @@
+import { ArrowArcLeft } from "phosphor-react";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 import { Container, FormContent } from "./styles";
 
 export function Contact() {
@@ -10,8 +12,12 @@ export function Contact() {
   }
   return (
     <Container>
-      <h1>CONTATO</h1>
-
+      <div>
+        <h1>CONTATO</h1>
+        <div className="back-to-home">
+          <NavLink to="/"><ArrowArcLeft size={25} />Início</NavLink>
+        </div>
+      </div>
       <FormContent onSubmit={handleSubmit(onHandleSubmit)}>
         <input
           id="name"
