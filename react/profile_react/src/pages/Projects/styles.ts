@@ -35,12 +35,13 @@ export const Container = styled.div`
     list-style: none;
     padding: 0.5rem;
     border-radius: 8px;
-    background-color: ${props => props.theme['background-700']};
+    background-color: ${props => props.theme['gray-300']};
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
     color: ${props => props.theme['gray-100']};
     
     a {
-      color: ${props => props.theme['gray-300']};
+      color: ${props => props.theme['purple-900']};
+      font-weight: bold;
     }
 
     p {
